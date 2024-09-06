@@ -1,89 +1,60 @@
-/* Основные стили для сайта */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #ff4081; /* Розовый цвет для шапки */
-    color: #ffffff;
+    background-color: red;
+    color: white;
     padding: 10px 0;
-    text-align: center;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-nav {
-    margin-top: 10px;
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1rem;
+    margin: 0 10px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.language-selector {
+    display: flex;
+}
+
+.language-selector button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.language-selector button:hover {
+    background-color: darkgreen;
 }
 
 main {
-    padding: 40px 0;
-}
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 section {
     margin: 20px 0;
 }
 
-h2 {
-    font-size: 2rem;
-    color: #333333;
-}
-
-p {
-    font-size: 1rem;
-    color: #666666;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form label {
-    display: block;
-    margin-top: 10px;
-}
-
-form input, form select {
-    width: 100%;
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
     padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-
-form button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #ff4081; /* Розовая кнопка */
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button
