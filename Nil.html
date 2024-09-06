@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazyonnails</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 id="header-title">Crazyonnails</h1>
+            <nav>
+                <a href="#home" id="home-link">Главная</a>
+                <a href="#about" id="about-link">О нас</a>
+                <a href="#services" id="services-link">Услуги</a>
+                <a href="#team" id="team-link">Наша команда</a>
+                <a href="#appointment" id="appointment-link">Записаться на прием</a>
+                <a href="#contact" id="contact-link">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <h2 id="home-title">Добро пожаловать в Crazyonnails</h2>
+                <p id="home-text">Ваш премиум-отель для ухода за ногтями и косметических процедур. Исследуйте наши услуги и познакомьтесь с нашими талантливыми мастерами ногтевого сервиса.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 id="about-title">О нас</h2>
+                <p id="about-text">В Crazyonnails мы гордимся тем, что предоставляем исключительные услуги по уходу за ногтями. Наш салон предлагает широкий спектр процедур, от классического маникюра до последних тенденций в искусстве ногтей. Наша цель - сделать так, чтобы вы ушли, чувствуя себя побалованным и красивым.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 id="services-title">Наши услуги</h2>
+                <ul id="services-list">
+                    <li>Маникюр</li>
+                    <li>Педикюр</li>
+                    <li>Искусство ногтей</li>
+                    <li>Гель-лаки</li>
+                    <li>Шеллак</li>
+                    <!-- Добавьте больше услуг по мере необходимости -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="team">
+            <div class="container">
+                <h2 id="team-title">Наша команда</h2>
+                <div class="team-member">
+                    <h3 id="team-member1-name">Елена Иванова</h3>
+                    <p id="team-member1-role">Эксперт по искусству ногтей и гель-лакам.</p>
+                </div>
+                <div class="team-member">
+                    <h3 id="team-member2-name">Александр Петров</h3>
+                    <p id="team-member2-role">Специалист по маникюру и педикюру.</p>
+                </div>
+                <!-- Добавьте больше членов команды по мере необходимости -->
+            </div>
+        </section>
+
+        <section id="appointment">
+            <div class="container">
+                <h2 id="appointment-title">Записаться на прием</h2>
+                <form action="#" method="post">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="procedure">Процедура:</label>
+                    <select id="procedure" name="procedure" required>
+                        <option value="manicure">Маникюр</option>
+                        <option value="pedicure">Педикюр</option>
+                        <option value="nail-art">Искусство ногтей</option>
+                        <option value="gel-nails">Гель-лаки</option>
+                        <option value="shellac">Шеллак</option>
+                        <!-- Добавьте больше опций по мере необходимости -->
+                    </select>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 id="contact-title">Контакты</h2>
+                <p id="contact-text">Не стесняйтесь обращаться к нам с любыми вопросами или запросами.</p>
+                <p>Email: <a href="mailto:info@crazyonnails.com">info@crazyonnails.com</a></p>
+                <p>Телефон: +123 456 7890</p>
+                <!-- Добавьте ваш адрес или ссылки на социальные сети по мере необходимости -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Crazyonnails. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const languageSelect = document.querySelector('.language-selector');
+            const elements = {
+                headerTitle: document.getElementById('header-title'),
+                homeTitle: document.getElementById('home-title'),
+                homeText: document.getElementById('home-text'),
+                aboutTitle: document.getElementById('about-title'),
+                aboutText: document.getElementById('about-text'),
+                servicesTitle: document.getElementById('services-title'),
+                servicesList: document.getElementById('services-list'),
+                teamTitle: document.getElementById('team-title'),
+                teamMember1Name: document.getElementById('team-member1-name'),
+                teamMember1Role: document.getElementById('team-member1-role'),
+                teamMember2Name: document.getElementById('team-member2-name'),
+                teamMember2Role: document.getElementById('team-member2-role'),
+                appointmentTitle: document.getElementById('appointment-title'),
+                contactTitle: document.getElementById('contact-title'),
+                contactText: document.getElementById('contact-text'),
+            };
+
+            fetch('translations.json')
+                .then(response => response.json())
+                .then(translations => {
+                    function updateText(language) {
+                        const t = translations[language];
+                        for (const key in t) {
+                            if (elements[key]) {
+                                elements[key].textContent = t[key];
+                            }
+                        }
+                    }
+
+                    // Set default language to Russian
+                    updateText('ru');
+
+                    languageSelect.addEventListener('click', function (event) {
+                        const lang = event.target.dataset.lang;
+                        if (lang) {
+                            updateText(lang);
+                        }
+                    });
+                })
+                .catch(err => console.error('Error loading translations:', err));
+        });
+    </script>
+</body>
+</html>
